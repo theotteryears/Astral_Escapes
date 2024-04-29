@@ -1,5 +1,5 @@
 <div class="container mt-3 p-3 text-center border">
-  <h1>Test</h1>
+  <h1>Planet Index</h1>
 </div>
 
 <div class="planet_grid p-3 text-center border">
@@ -7,9 +7,10 @@
     <div class="mt-3">
       <p>
       Name: <%= planet.name %>
-      <br>Location: <%= planet.details%>
+      <br>Star Cluster: <%= planet.details%>
       <br>Galaxy: <%= planet.location %>
-      <br>Price per night: <%= planet.price_per_night %>
+      <br>Price per night: $<%= planet.price_per_night %>
+      <br>Distance from you: <%= planet.distance %>
       </p>
     </div>
   <% end %>
