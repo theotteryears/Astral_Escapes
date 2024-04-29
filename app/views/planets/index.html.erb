@@ -3,5 +3,14 @@
 </div>
 
 <div class="planet_grid p-3 text-center border">
-  <p>This is where the css gird of planets will go</p>
+  <% @planets.each do |planet| %>
+    <div class="mt-3">
+      <p>
+      Name: <%= planet.name %>
+      <br>Location: <%= planet.details%>
+      <br>Galaxy: <%= planet.location %>
+      <br>Price per night: <%= planet.price_per_night %>
+      </p>
+    </div>
+  <% end %>
 </div>
