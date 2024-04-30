@@ -24,4 +24,6 @@ end
 
 puts "Finished creating planets"
 
+puts "---------------------------------"
+
 puts "All finished!"

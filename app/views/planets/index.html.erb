@@ -1,8 +1,9 @@
-<div class="container mt-3 p-3 text-center">
-  <h1>Show Me What You Got</h1>
+<div class="container-lg mb-3">
+<div class="header-container mt-3 p-3 text-center border">
+  <h1 class="my-4">Show Me What You Got</h1>
 
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
+  <div class="search-form-control form-group my-3 p-3">
     <input class="form-control string required" type="text" name="search[query]" id="search_query" />
     <button name="button" type="submit" class="btn btn-flat rounded-pill">
       <i class="fas fa-search"></i>
@@ -11,22 +12,33 @@
   </div>
   <% end %>
 </div>
+</div>
 
-<div class="planet_grid p-3 text-center border">
-  <% @planets.each do |planet| %>
-    <div class="border">
-      <p>
-      Name: <%= planet.name %>
-      <br>Star Cluster: <%= planet.details%>
-      <br>Galaxy: <%= planet.location %>
-      <br>Price per night: $<%= planet.price_per_night %>
-      <br>Distance from you: <%= planet.distance %>
-      </p>
-    </div>
-  <% end %>
+<div class="container">
 
-   <div class="text-center p-3">
-    <%= link_to "Back to homepage", planets_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
+  <div class="cards">
+    <% @planets.each do |planet| %>
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>" width="300" height="200">
+        <div class="d-flex card-trip-infos">
+          <div>
+              <h1><%= link_to planet.name, planets_path(planet) %></h1>
+            <p>
+              Star Cluster - <%= planet.details%>
+              <br>Galaxy - <%= planet.location %>
+              <br><%= planet.distance %> away
+              <br>Planet owner - <%= planet.user.first_name %> <%= planet.user.last_name %>
+            </p>
+            </div>
+            <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
+          <%# <img src="" class="card-trip-user avatar-bordered" /> %>
+            </div>
+          </div>
+    <% end %>
   </div>
+</div>
 
+    <div class="text-center p-3">
+      <%= link_to "Back to homepage", root_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
+    </div>
 </div>
