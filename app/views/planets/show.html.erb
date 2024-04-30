@@ -3,10 +3,13 @@
   <img src="<%=@planet.planet_img%>%>" />
   <div class="card-trip-infos">
     <div>
-      <h2><%=@planet.name%></h2>
-      <p><%=@planet.details%></p>
+      <h1><%=@planet.name%></h1>
     </div>
-    <h2 class="card-trip-pricing"><%=@planet.price_per_night%></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <h2 class="card-trip-pricing">$<%=@planet.price_per_night%></h2>
+
+  </div>
+  <div class="card-trip-infos">
+      <p><%=@planet.details %></p>
+       <p><%=@planet.location%></p>
   </div>
 </div>
