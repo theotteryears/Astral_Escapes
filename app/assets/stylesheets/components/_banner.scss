@@ -2,7 +2,7 @@
   background-image: asset-url("home.jpg");
   background-size: cover;
   background-position: center;
-  padding: 350px 0;
+  padding: 300px 0;
   border-radius: 25px;
 }
 
@@ -10,12 +10,25 @@
   margin: 0;
   color: white;
   text-shadow: 0px 0px 1px rgba(0,0,0,1);
-  font-size: 64px;
+  font-size: 72px;
   font-weight: bold;
 }
 
-.banner p {
+.banner h2 {
   font-size: 36px;
   color: rgba(35,139,236,1);
   text-shadow: 0px 0px 1px rgba(0,0,0,1);
+}
+
+.banner h3 {
+  font-size: 36px;
+  color: rgba(56, 245, 249, 1);
+  text-shadow: 0px 0px 1px rgba(0,0,0,1);
+}
+
+.banner p {
+  font-size: 16px;
+  color: white;
+  text-shadow: 0px 0px 1px rgba(0,0,0,1);
+  padding-bottom: 0.25rem;
 }
