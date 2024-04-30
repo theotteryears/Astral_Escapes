@@ -1,5 +1,5 @@
 <div class="container-lg mb-3">
-<div class="header-container mt-3 p-3 text-center border">
+<div class="header-container mt-3 p-3 text-center">
   <h1 class="my-4">Show Me What You Got</h1>
 
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
@@ -22,7 +22,10 @@
         <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>" width="300" height="200">
         <div class="d-flex card-trip-infos">
           <div>
-              <h1><%= link_to planet.name, planets_path(planet) %></h1>
+            <div class="">
+              <h1><%= planet.name %></h1>
+              <h2></h2>
+            </div>
             <p>
               Star Cluster - <%= planet.details%>
               <br>Galaxy - <%= planet.location %>
@@ -32,13 +35,16 @@
             </div>
             <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
           <%# <img src="" class="card-trip-user avatar-bordered" /> %>
-            </div>
           </div>
+          <div class="text-center mb-3">
+          <%= link_to "Tell me more...", planet_path(planet), class: "btn btn-flat rounded-pill" %>
+          </div>
+        </div>
     <% end %>
   </div>
-</div>
 
     <div class="text-center p-3">
       <%= link_to "Back to homepage", root_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
     </div>
+
 </div>
