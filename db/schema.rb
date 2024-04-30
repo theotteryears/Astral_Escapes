@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_095414) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_135956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_095414) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "visitor_id", null: false
+    t.bigint "planet_id", null: false
+    t.string "start_date"
+    t.string "end_date"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planet_id"], name: "index_bookings_on_planet_id"
+    t.index ["visitor_id"], name: "index_bookings_on_visitor_id"
+  end
+
   create_table "planets", force: :cascade do |t|
     t.string "name"
     t.text "details"
@@ -71,5 +83,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_30_095414) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "planets"
+  add_foreign_key "bookings", "users", column: "visitor_id"
   add_foreign_key "planets", "users"
 end

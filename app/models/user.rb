@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :planets
+  has_many :bookings, foreign_key: :visitor_id
 end
