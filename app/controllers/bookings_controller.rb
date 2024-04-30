@@ -1,20 +1,33 @@
 class BookingsController < ApplicationController
 
+def index
+  @bookings = Booking.all
+  @booking = Booking.new
+end
+
   def new
+    @planet = Planet.find(params[:planet_id])
     @booking = Booking.new
   end
 
   def create
-    @planet = Planet.find(params[:planet_id])
+    @planet = Planet.find(params[:id])
+    raise
     @booking = Booking.new(booking_params)
     @booking.planet = @planet
     @booking.visitor = current_user
     # @booking.user = current_user
     if @booking.save
-      redirect_to planet_path(@planet)
+      redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to root_path
+      # render :new, status: :unprocessable_entity
     end
+  end
+
+  def dashboard
+    @booking = Booking.where(visitor: current_user)
+
   end
 
   private
