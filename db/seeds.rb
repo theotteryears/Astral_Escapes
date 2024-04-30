@@ -179,7 +179,7 @@ planet.planet_img.attach(io: file, filename: "32.jpg", content_type: "image/jpg"
 planet.save
 
 Planet.create!(name: "Yasamal", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
-file = URI.open("hhttps://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481617/33_ygwsox.jpg")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481617/33_ygwsox.jpg")
 planet.planet_img.attach(io: file, filename: "33.jpg", content_type: "image/jpg")
 planet.save
 
