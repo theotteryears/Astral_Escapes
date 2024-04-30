@@ -20,7 +20,7 @@
     <% @planets.each do |planet| %>
       <div class="card-trip">
         <a href="<%= planet_path(planet) %>">
-        <%= image_tag planet.planet_img %>
+        <%= cl_image_tag planet.planet_img.key %>
         <div class="d-flex card-trip-infos">
           <div>
             <div class="">
