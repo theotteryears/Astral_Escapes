@@ -1,6 +1,6 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: :show
-
+  
   def show
   end
 
