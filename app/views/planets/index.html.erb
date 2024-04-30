@@ -18,31 +18,25 @@
 
   <div class="cards">
     <% @planets.each do |planet| %>
-      <a href=""><div class="card-trip">
-
+      <div class="card-trip">
         <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>" width="300" height="200">
         <div class="d-flex card-trip-infos">
           <div>
-            <div>
-            <h1><%= planet.name %></h1>
-            </div>
+              <h1><%= link_to planet.name, planets_path(planet) %></h1>
             <p>
               Star Cluster - <%= planet.details%>
               <br>Galaxy - <%= planet.location %>
               <br><%= planet.distance %> away
               <br>Planet owner - <%= planet.user.first_name %> <%= planet.user.last_name %>
             </p>
-          </div>
-          <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
+            </div>
+            <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
           <%# <img src="" class="card-trip-user avatar-bordered" /> %>
-        </div>
-      </div>
+            </div>
+          </div>
     <% end %>
-      </a>
-
-
-    </div>
   </div>
+</div>
 
     <div class="text-center p-3">
       <%= link_to "Back to homepage", root_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
