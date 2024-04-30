@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-astral-escapes">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", alt: "AstralEscapes", width: 200 %>
-    </a>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,4 +34,27 @@
     <h1>Astral Escapes</h1>
     <p>Change your life and visit a new planet</p>
   </div>
+</div>
+<div class="cards">
+<div class="card-planet">
+  <%= image_tag "planete1.jpeg" %>
+  <div class="card-planet-infos">
+    <h2>Venus</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+<div class="card-planet">
+  <%= image_tag "planete2.jpeg" %>
+  <div class="card-planet-infos">
+    <h2>Neptune</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
+<div class="card-planet">
+  <%= image_tag "planete3.jpeg" %>
+  <div class="card-planet-infos">
+    <h2>Mars</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
 </div>
