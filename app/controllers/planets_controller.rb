@@ -18,6 +18,7 @@ class PlanetsController < ApplicationController
       redirect_to planet_path(@planet)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   private
