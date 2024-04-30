@@ -19,7 +19,8 @@
   <div class="cards">
     <% @planets.each do |planet| %>
       <div class="card-trip">
-        <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>" width="300" height="200">
+        <a href="<%= planet_path(planet) %>">
+        <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>">
         <div class="d-flex card-trip-infos">
           <div>
             <div class="">
@@ -36,9 +37,7 @@
             <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
           <%# <img src="" class="card-trip-user avatar-bordered" /> %>
           </div>
-          <div class="text-center mb-3">
-          <%= link_to "Tell me more...", planet_path(planet), class: "btn btn-flat rounded-pill" %>
-          </div>
+          </a>
         </div>
     <% end %>
   </div>
