@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit]
 
   def new
     @booking = Booking.new
@@ -12,17 +11,13 @@ class BookingsController < ApplicationController
     @booking.visitor = current_user
     # @booking.user = current_user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to planet_path(@planet)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   private
-
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
