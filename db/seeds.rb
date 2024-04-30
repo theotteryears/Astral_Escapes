@@ -159,7 +159,7 @@ planet.planet_img.attach(io: file, filename: "28.jpg", content_type: "image/jpg"
 planet.save
 
 Planet.create!(name: "Talbalta", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
-file = URI.open("hhttps://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481616/29_ht4ven.jpg")
+file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481616/29_ht4ven.jpg")
 planet.planet_img.attach(io: file, filename: "29.jpg", content_type: "image/jpg")
 planet.save
 
