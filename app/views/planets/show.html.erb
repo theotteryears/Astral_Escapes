@@ -11,6 +11,9 @@
       <p><%=@planet.details %></p>
        <p>Star system - <%=@planet.location%></p>
   </div>
-
- <%=link_to "Book this planet", new_planet_booking_path(@planet)%>
+  <div data-controller="form" class="mt-5">
+  <button class="btn btn-outline-primary">Book this planet</button>
+  <%= render "form", planet: @planet %>
+</div>
+ <%# <%=link_to "Book this planet", new_planet_booking_path(@planet)%> %>
 </div>
