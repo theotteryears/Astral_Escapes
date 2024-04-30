@@ -4,30 +4,39 @@
     <p>Change your life and visit a new planet</p>
   </div>
 </div>
+
 <div><h1>Guest favorite</h1></div>
+
 <div class="cards">
-<div class="card-planet">
-  <%= image_tag "planete1.jpeg" %>
-  <div class="card-planet-infos">
-    <h2>Venus</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
-<div class="card-planet">
-  <%= image_tag "planete2.jpeg" %>
-  <div class="card-planet-infos">
-    <h2>Neptune</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
-<div class="card-planet">
-  <%= image_tag "planete3.jpeg" %>
-  <div class="card-planet-infos">
-    <h2>Mars</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
-</div>
-    <div class="text-center p-3">
-      <%= link_to "See all planets", planets_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
+  <%= link_to planets_path do %>
+    <div class="card-planet">
+      <%= image_tag "planete1.jpeg" %>
+      <div class="card-planet-infos">
+        <h2>Venus</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
     </div>
+  <% end %>
+  <%= link_to planets_path do %>
+    <div class="card-planet" >
+      <%= image_tag "planete2.jpeg" %>
+      <div class="card-planet-infos">
+        <h2>Neptune</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to planets_path do %>
+    <div class="card-planet">
+        <%= image_tag "planete3.jpeg" %>
+        <div class="card-planet-infos">
+          <h2>Mars</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="text-center p-3">
+  <%= link_to "See all planets", planets_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
+</div>
