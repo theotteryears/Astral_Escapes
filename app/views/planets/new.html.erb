@@ -1,0 +1,11 @@
+<h3>Create a new planet</h3>
+
+<%= simple_form_for @planet do |f| %>
+  <%= f.input :planet_img,  as: :file %>
+  <%= f.input :name %>
+  <%= f.input :details %>
+  <%= f.input :location %>
+  <%= f.input :distance %>
+  <%= f.input :price_per_night %>
+  <%= f.submit %>
+<% end %>
