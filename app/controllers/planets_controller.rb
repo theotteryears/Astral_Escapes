@@ -1,4 +1,5 @@
 class PlanetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_planet, only: :show
 
   def index
@@ -18,14 +19,16 @@ class PlanetsController < ApplicationController
       redirect_to planet_path(@planet)
     else
       render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def set_planet
-    @planet = Planets.find[:id]
+    @planet = Planet.find(params[:id])
   end
 
   def planet_params
     params.require(:planet).permit(:name, :details, :location, :distance, :price_per_night, :planet_img)
+  end
 end
