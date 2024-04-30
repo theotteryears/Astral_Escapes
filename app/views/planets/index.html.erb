@@ -20,7 +20,7 @@
     <% @planets.each do |planet| %>
       <div class="card-trip">
         <a href="<%= planet_path(planet) %>">
-        <img src="https://source.unsplash.com/random?planet=<%= planet.name %>&<%= Time.now.to_f %>">
+        <%= image_tag planet.planet_img %>
         <div class="d-flex card-trip-infos">
           <div>
             <div class="">
