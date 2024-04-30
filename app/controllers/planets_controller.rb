@@ -1,4 +1,5 @@
 class PlanetsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_planet, only: :show
 
   def index
@@ -24,7 +25,7 @@ class PlanetsController < ApplicationController
   private
 
   def set_planet
-    @planet = Planets.find[:id]
+    @planet = Planet.find(params[:id])
   end
 
   def planet_params
