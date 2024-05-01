@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
     # respond_to do |format|
     if @booking.save
         redirect_to bookings_path
-      # else
+      else
+        render 'planets/show', status: :unprocessable_entity
         # render(partial: "shared/form", formats: :erb, locals: {planet: @planet, booking: @booking})
         # render :new, status: :unprocessable_entity
         # format.html { redirect_to root_path }
