@@ -2,8 +2,12 @@ class PlanetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_planet, only: :show
 
+
   def index
     @planets = Planet.all
+    if params[:query].present?
+      @planets = Planet.where("name ILIKE ?", params[:query])
+    end
   end
 
   def show
