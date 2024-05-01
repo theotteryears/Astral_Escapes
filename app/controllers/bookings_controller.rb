@@ -1,9 +1,8 @@
 class BookingsController < ApplicationController
 
-def index
-  @bookings = Booking.all
-  @booking = Booking.new
-end
+  def index
+    @bookings = Booking.all
+  end
 
   def new
     @planet = Planet.find(params[:planet_id])
@@ -25,11 +24,6 @@ end
         format.json
       end
     end
-  end
-
-  def dashboard
-    @booking = Booking.where(visitor: current_user)
-
   end
 
   private

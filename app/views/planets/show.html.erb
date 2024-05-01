@@ -1,4 +1,4 @@
-<div class="container mb-4">
+<div class="container mt-3 mb-4">
   <div class="card-trip-show">
     <%= image_tag @planet.planet_img %>
       <div class="row">
@@ -8,7 +8,7 @@
           <p>Star cluster: <%= @planet.details %></p>
           <p>Galaxy: <%=@planet.location%></p>
           <h2 class="card-trip-pricing-show">
-            <span>$<%=@planet.price_per_night%></span> per night</h2>
+            <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>
         </div>
         <div class="col-6 border" data-controller="insert-in-list">
