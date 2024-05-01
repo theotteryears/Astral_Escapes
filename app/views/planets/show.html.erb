@@ -2,7 +2,7 @@
   <div class="card-trip-show">
     <%= image_tag @planet.planet_img %>
       <div class="row">
-        <div class="col-6 border">
+        <div class="col-6">
           <div class="container text-center p-5">
           <h1><%=@planet.name%></h1>
           <p>Star cluster: <%= @planet.details %></p>
@@ -11,7 +11,7 @@
             <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>
         </div>
-        <div class="col-6 border" data-controller="insert-in-list">
+        <div class="col-6" data-controller="insert-in-list">
           <div data-controller="toggle" class="mt-5">
             <div id="bookings" data-insert-in-list-target="items">
               <%= render "shared/form", planet: @planet, booking: @booking %>
@@ -24,7 +24,7 @@
 
 
     <div class="d-flex justify-content-center mb-4">
-      <%=link_to "Back to all planets", planets_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
+      <%=link_to "Back", planets_path, class: "btn btn-flat" %>
     </div>
   </div>
 </div>

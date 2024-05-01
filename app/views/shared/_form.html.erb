@@ -1,9 +1,13 @@
-<%= simple_form_for [planet, booking] do |f| %>
+<div class="container w-75">
+  <%= simple_form_for [planet, booking] do |f| %>
     <%= f.input :start_date,
     as: :string,
     input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :end_date,
     as: :string,
     input_html: { data: { controller: "datepicker" } } %>
-    <%= f.submit %>
+    <div class="text-center">
+    <%= f.submit "Book", class: "btn btn-flat"%>
+    </div>
   <% end %>
+</div>

@@ -27,7 +27,7 @@
 </div>
 
 <div class="text-center p-3 my-3">
-  <%= link_to "Browse our intergalatic destinations", planets_path, class: "btn btn-flat-home rounded-pill px-5 py-3" %>
+  <%= link_to "Browse our intergalatic destinations", planets_path, class: "btn btn-flat-home" %>
 </div>
 
 <div>
@@ -52,7 +52,6 @@
                 Star Cluster - <%= planet.details%>
                 <br>Galaxy - <%= planet.location %>
                 <br><%= planet.distance %> away
-                <br>Planet owner - <%= planet.user.first_name %> <%= planet.user.last_name %>
               </p>
               </div>
               <h2 class="card-trip-pricing"><span>$<%= planet.price_per_night %> </span>per night</h2>

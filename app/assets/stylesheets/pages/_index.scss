@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
 
 .header-container {
   background-color:  white;
@@ -7,6 +8,6 @@
 
   h1 {
     color: rgb(39, 39, 39);
-    font-size: 48px;
+    font-size: 64px;
   }
 }
