@@ -3,6 +3,7 @@
  <div><% @bookings.each do |booking| %>
    <p><%= booking.planet.name %></p>
    <p><%= booking.start_date %> <%= booking.end_date %></p>
-   <p><%= booking.status %></p></div>
+   <p><%= booking.status %></p>
   <% end %>
+  </div>
 </div>

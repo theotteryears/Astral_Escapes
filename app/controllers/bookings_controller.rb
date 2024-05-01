@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     # @booking.user = current_user
     # respond_to do |format|
     if @booking.save
-        redirect_to dashboard_path
+        redirect_to bookings_path
       # else
         # render(partial: "shared/form", formats: :erb, locals: {planet: @planet, booking: @booking})
         # render :new, status: :unprocessable_entity
