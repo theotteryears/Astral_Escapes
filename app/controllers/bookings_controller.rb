@@ -10,20 +10,28 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @planet = Planet.find(params[:id])
+
+    @planet = Planet.find(params[:planet_id])
     @booking = Booking.new(booking_params)
     @booking.planet = @planet
     @booking.visitor = current_user
     # @booking.user = current_user
-    respond_to do |format|
-      if @booking.save
-        format.html { redirect_to root_path }
-        format.json
-      else
-        format.html { render "bookings/new", status: :unprocessable_entity}
-        format.json
+    # respond_to do |format|
+    if @booking.save
+        redirect_to dashboard_path
+      # else
+        # render(partial: "shared/form", formats: :erb, locals: {planet: @planet, booking: @booking})
+        # render :new, status: :unprocessable_entity
+        # format.html { redirect_to root_path }
+        # format.json
+      # else
+        # format.html { render "bookings/new", status: :unprocessable_entity}
+        # format.json
       end
-    end
+  end
+
+  def dashboard
+
   end
 
   private
