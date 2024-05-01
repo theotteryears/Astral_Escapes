@@ -11,12 +11,14 @@
             <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>
         </div>
-        <div class="col-6 border">
+        <div class="col-6 border" data-controller="insert-in-list">
           <div data-controller="toggle" class="mt-5">
-            <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this planet</button>
-            <div data-toggle-target="togglableElement" class="d-none">
-              <%= render "shared/form", planet: @planet, booking: @booking %>
-            </div>
+            <%# <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this planet</button> %>
+            <%# <div data-toggle-target="togglableElement" class="d-none"> %>
+              <div id="bookings" data-insert-in-list-target="items">
+                <%= render "shared/form", planet: @planet, booking: @booking %>
+              </div>
+            <%# </div> %>
           </div>
         </div>
       </div>
