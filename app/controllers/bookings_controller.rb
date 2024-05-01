@@ -12,16 +12,18 @@ end
 
   def create
     @planet = Planet.find(params[:id])
-    raise
     @booking = Booking.new(booking_params)
     @booking.planet = @planet
     @booking.visitor = current_user
     # @booking.user = current_user
-    if @booking.save
-      redirect_to root_path
-    else
-      redirect_to root_path
-      # render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @booking.save
+        format.html { redirect_to root_path }
+        format.json
+      else
+        format.html { render "bookings/new", status: :unprocessable_entity}
+        format.json
+      end
     end
   end
 
