@@ -1,42 +1,65 @@
-<div class="banner">
-  <div class="container">
-    <h1>Astral Escapes</h1>
-    <p>Change your life and visit a new planet</p>
+<div class="container">
+  <div class="banner">
+    <div class="home-container">
+      <h1>Astral Escapes</h1>
+      <div class="row">
+        <div class="col-6">
+          <h2>Change your life</h2>
+          <h3>Visit a new planet</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div><h1>Guest favorite</h1></div>
+<div class="container w-75">
+  <div class="row">
+    <div class="col-12">
+      <p class="mt-4">Welcome to Astral Escapes, your gateway to the cosmos and beyond! Embark on the ultimate adventure with us as you explore the vast expanse of the universe and book your next interstellar getaway.</p>
 
-<div class="cards">
-  <%= link_to planets_path do %>
-    <div class="card-planet">
-      <%= image_tag "planete1.jpeg" %>
-      <div class="card-planet-infos">
-        <h2>Venus</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
+      <p>At Astral Escapes, we offer you the opportunity to journey to distant planets and experience the wonders of space firsthand. Whether you dream of stargazing on a serene moonlit surface, hiking through alien landscapes, or marveling at breathtaking cosmic phenomena, our diverse selection of planets has something for every space enthusiast.</p>
+
+      <p>With our user-friendly booking platform, planning your celestial vacation has never been easier. Simply browse our curated collection of planets, each offering its own unique charm and allure. From exotic flora and fauna to ancient ruins and mysterious phenomena, each destination promises a once-in-a-lifetime experience.</p>
+
+      <p>So why wait? Start your cosmic adventure today with Astral Escapes and unlock the secrets of the universe. Book your planet escape now and make your dreams of space travel a reality!</p>
     </div>
-  <% end %>
-  <%= link_to planets_path do %>
-    <div class="card-planet" >
-      <%= image_tag "planete2.jpeg" %>
-      <div class="card-planet-infos">
-        <h2>Neptune</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-  <% end %>
-  <%= link_to planets_path do %>
-    <div class="card-planet">
-        <%= image_tag "planete3.jpeg" %>
-        <div class="card-planet-infos">
-          <h2>Mars</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-    </div>
-  <% end %>
+  </div>
 </div>
 
-<div class="text-center p-3">
+<div>
+  <h1 class="mt-4 mb-3 text-center">
+    Guest favorites
+  </h1>
+</div>
+
+<div class="container my-3">
+  <div class="cards">
+      <% @planets.each do |planet| %>
+        <div class="card-trip">
+          <a href="<%= planet_path(planet) %>">
+          <%= cl_image_tag planet.planet_img.key %>
+          <div class="d-flex card-trip-infos">
+            <div>
+              <div class="">
+                <h1><%= planet.name %></h1>
+                <h2></h2>
+              </div>
+              <p>
+                Star Cluster - <%= planet.details%>
+                <br>Galaxy - <%= planet.location %>
+                <br><%= planet.distance %> away
+                <br>Planet owner - <%= planet.user.first_name %> <%= planet.user.last_name %>
+              </p>
+              </div>
+              <h2 class="card-trip-pricing"><span>$<%= planet.price_per_night %> </span>per night</h2>
+              <%# <img src="" class="card-trip-user avatar-bordered" /> %>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center p-3 mb-3">
   <%= link_to "See all planets", planets_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
 </div>

@@ -1,17 +1,17 @@
-<div class="container-lg mb-3">
-<div class="header-container mt-3 p-3 text-center">
-  <h1 class="my-4">Show Me What You Got</h1>
+<div class="container-lg">
+<div class="header-container text-center">
+  <h1 class="">Show Me <span>What</span> You Got</h1>
 
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group my-3 p-3">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat rounded-pill">
-      <i class="fas fa-search"></i>
-      Search
-    </button>
+    <%= simple_form_for :search, url: planets_path, method: :get do |f| %>
+      <div class="search-form-control form-group my-3 p-3">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat rounded-pill px-4 py-2">
+          <i class="fas fa-search"></i>
+          Search
+        </button>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>
 
 <div class="container">
@@ -21,7 +21,7 @@
       <div class="card-trip">
         <a href="<%= planet_path(planet) %>">
         <%= cl_image_tag planet.planet_img.key %>
-        <div class="d-flex card-trip-infos">
+        <div class="card-trip-infos">
           <div>
             <div class="">
               <h1><%= planet.name %></h1>
@@ -34,7 +34,7 @@
               <br>Planet owner - <%= planet.user.first_name %> <%= planet.user.last_name %>
             </p>
             </div>
-            <h2 class="card-trip-pricing">$<%= planet.price_per_night %> per night</h2>
+            <h2 class="card-trip-pricing"><span>$<%= planet.price_per_night %> </span>per night</h2>
           <%# <img src="" class="card-trip-user avatar-bordered" /> %>
           </div>
           </a>
@@ -42,7 +42,7 @@
     <% end %>
   </div>
 
-    <div class="text-center p-3">
+    <div class="text-center p-3 my-3">
       <%= link_to "Back to homepage", root_path, class: "btn btn-flat rounded-pill px-4 py-2" %>
     </div>
 

@@ -193,7 +193,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481622/3
 planet.planet_img.attach(io: file, filename: "35.jpg", content_type: "image/jpg")
 planet.save
 
-planet = Planet.new(name: "Corazón Sagrado", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
+planet = Planet.new(name: "Corazón", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481622/36_tvzecp.jpg")
 planet.planet_img.attach(io: file, filename: "36.jpg", content_type: "image/jpg")
 planet.save
