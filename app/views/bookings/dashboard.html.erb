@@ -1,0 +1,7 @@
+<div>
+  <% @planet.bookings.each do |booking| %>
+    <%= booking.start_date %>
+    <% length = booking.end_date - booking.start_date %>
+    <%= length * @planet.price_per_night%>
+  <% end %>
+</div>
