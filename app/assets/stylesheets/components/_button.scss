@@ -11,3 +11,18 @@
   color: rgb(39, 39, 39);
   border: 2px solid black;
 }
+
+.btn-flat-home {
+  color: white;
+  padding: 8px 24px;
+  border: 2px solid rgba(35,139,236,1);
+  background: rgb(39, 39, 39);
+  transition: background 0.3s ease;
+  font-size: 24px;
+}
+
+.btn-flat-home:hover {
+  background: rgba(35,139,236,1);
+  color: rgb(39, 39, 39);
+  border: 2px solid black;
+}
