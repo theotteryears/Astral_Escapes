@@ -18,9 +18,9 @@
 
   <div class="cards">
     <% @planets.each do |planet| %>
-      <div class="card-trip">
+      <% if planet.planet_img.attached? %>
+        <div class="card-trip">
         <a href="<%= planet_path(planet) %>">
-        <% if planet.planet_img.attached? %>
           <%= cl_image_tag planet.planet_img.key %>
         <% end %>
         <div class="card-trip-infos">
