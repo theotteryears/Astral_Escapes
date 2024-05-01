@@ -1,28 +1,52 @@
 .btn-flat {
-  color: white;
+  position: relative;
+  color: rgb(39,39,39);
   padding: 8px 24px;
   border: 2px solid rgba(35,139,236,1);
-  background: rgb(39, 39, 39);
+  background: rgb(255, 255, 255);
   transition: background 0.3s ease;
+  font-family: "Unica One", "Helvetica", "sans-serif";
+  font-size: 24px;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  &:hover {
+    opacity: 0.8;
+    color: rgb(39,39,39);
+    border: 2px solid rgba(35,139,236,1);
+  }
+  &:active {
+    top: 2px;
+    left: 1px;
+    box-shadow: none;
+    opacity: 0.8;
+    color: rgb(39,39,39);
+    border: 2px solid rgba(35,139,236,1);
+  }
 }
 
-.btn-flat:hover {
-  background: rgba(35,139,236,1);
-  color: rgb(39, 39, 39);
-  border: 2px solid black;
-}
 
 .btn-flat-home {
-  color: white;
+  position: relative;
+  color: rgb(39,39,39);
   padding: 8px 24px;
   border: 2px solid rgba(35,139,236,1);
-  background: rgb(39, 39, 39);
+  background: rgb(255, 255, 255);
   transition: background 0.3s ease;
-  font-size: 24px;
-}
-
-.btn-flat-home:hover {
-  background: rgba(35,139,236,1);
-  color: rgb(39, 39, 39);
-  border: 2px solid black;
+  font-family: "Unica One", "Helvetica", "sans-serif";
+  font-size: 28px;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  &:hover {
+    opacity: 0.8;
+    color: rgb(39,39,39);
+    border: 2px solid rgba(35,139,236,1);
+  }
+  &:active {
+    top: 2px;
+    left: 1px;
+    box-shadow: none;
+    opacity: 0.8;
+    color: rgb(39,39,39);
+    border: 2px solid rgba(35,139,236,1);
+  }
 }
