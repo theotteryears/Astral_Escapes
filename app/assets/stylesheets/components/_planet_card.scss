@@ -5,6 +5,21 @@
   border-radius: 25px;
 }
 
+.card-trip:hover {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 20px rgba(35,139,236,0.6);
+  border-radius: 25px;
+}
+
+.card-trip:active {
+  overflow: hidden;
+  background: white;
+  border-radius: 25px;
+  opacity: 0.6;
+  box-shadow: 0 0 20px rgba(35,139,236,0.6);
+}
+
 .card-trip img {
   height: 200px;
   width: 100%;
