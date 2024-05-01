@@ -13,6 +13,12 @@
         </div>
         <div class="col-6 border">
           <h1>FORM GOES HERE</h1>
+          <div data-controller="toggle" class="mt-5">
+            <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this planet</button>
+            <div data-toggle-target="togglableElement" class="d-none">
+              <%= render "shared/form", planet: @planet, booking: @booking %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
