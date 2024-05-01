@@ -1,19 +1,23 @@
-<%=link_to "Back to Planets", planets_path %>
+<%= link_to "Back to Planets", planets_path %>
 <div class="card-trip">
   <%= image_tag @planet.planet_img %>
-  <div class="card-trip-infos">
-    <div>
-      <h1><%=@planet.name%></h1>
+    <div class="card-trip-infos">
+      <div>
+        <h1><%= @planet.name %></h1>
+      </div>
+      <h2 class="card-trip-pricing">$<%= @planet.price_per_night %> per night</h2>
     </div>
-    <h2 class="card-trip-pricing">$<%=@planet.price_per_night%> per night</h2>
-  </div>
-  <div class="card-trip-infos">
-      <p><%=@planet.details %></p>
-       <p>Star system - <%=@planet.location%></p>
-  </div>
-
- <%= link_to "Book this planet", new_planet_booking_path(@planet) %>
+    <div class="card-trip-infos">
+      <p><%= @planet.details %></p>
+      <p>Star system - <%= @planet.location %></p>
+    </div>
 
 
+    <div data-controller="toggle" class="mt-5">
+      <button data-action="click->toggle#fire" class="btn btn-outline-primary">Book this planet</button>
+      <div data-toggle-target="togglableElement" class="d-none">
+        <%= render "shared/form", planet: @planet, booking: @booking %>
+      </div>
+    </div>
 
 </div>
