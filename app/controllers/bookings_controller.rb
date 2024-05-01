@@ -15,18 +15,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.planet = @planet
     @booking.visitor = current_user
-    # @booking.user = current_user
-    # respond_to do |format|
     if @booking.save
         redirect_to bookings_path
-      # else
-        # render(partial: "shared/form", formats: :erb, locals: {planet: @planet, booking: @booking})
-        # render :new, status: :unprocessable_entity
-        # format.html { redirect_to root_path }
-        # format.json
-      # else
-        # format.html { render "bookings/new", status: :unprocessable_entity}
-        # format.json
+      else
+        render 'planets/show', status: :unprocessable_entity
       end
   end
 
