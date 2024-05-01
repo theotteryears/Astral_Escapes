@@ -1,13 +1,13 @@
 .btn-flat {
   color: white;
   padding: 8px 24px;
-  border: 2px solid #31dd87;
+  border: 2px solid rgba(35,139,236,1);
   background: rgb(39, 39, 39);
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #31dd87;
+  background: rgba(35,139,236,1);
   color: rgb(39, 39, 39);
   border: 2px solid black;
 }

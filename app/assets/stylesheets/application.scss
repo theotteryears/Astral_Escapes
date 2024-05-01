@@ -14,8 +14,14 @@
 @import "pages/show";
 
 
-
+body {
+  background-color: white;
+}
 a {
   text-decoration: none;
   color: black
+}
+
+span {
+  color: rgba(35,139,236,1);
 }
