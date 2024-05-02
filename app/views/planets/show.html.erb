@@ -22,34 +22,27 @@
       <div class="row">
         <hr>
         <div class="container">
-          <% @booking.reviews.each do |review| %>
-            <% review.rating.times do %>
-              <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            <% end %>
-            <% (5 - review.rating).times do %>
-              <i class="fa-thin fa-star" style="color: #000000;"></i>
-            <% end %>
-
-            <h3>Guest Favorite</h3>
-            <hr>
-            <div class="col-6">
-              <%= review.content %>
+          <div class="container">
+          <div class="container">
+            <div class="cards">
+              <% @planet.reviews.each do |review| %>
+                  <div class="card-trip">
+                  <div class="card-trip-infos">
+                    <div>
+                      <br><p><%= review.content %></p>
+                      </div>
+                    </div>
+                    </a>
+                  </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
 
       </div>
     </div>
   </div>
     <div class="d-flex justify-content-center mb-4">
       <%=link_to "Back", planets_path, class: "btn btn-flat" %>
+
     </div>
   </div>
 </div>
-<p><strong>Reviews</strong></p>
-<ul class="list-group">
-  <% @booking.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
-  <% end %>
-</ul>
-<br>
