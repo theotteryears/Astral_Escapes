@@ -17,17 +17,20 @@
             <br><p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
             <br><h2>
             <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
-            <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= link_to "Remove", booking_path(booking),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-              %>
+            <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>">
             </span>
 
             </h2>
             </div>
           </div>
           </a>
-        <%= link_to "Add a new review", new_booking_review_path(booking) %>
+          <div class="container d-flex justify-content-between">
+        <%= link_to "Add a new review", new_booking_review_path(booking), class: "btn btn-flat" %>
+        <%= link_to "Remove", booking_path(booking),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "btn btn-flat"
+              %>
+              </div>
         </div>
     <% end %>
   </div>
