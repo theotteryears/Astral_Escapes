@@ -9,58 +9,70 @@
     <% @bookings.each do |booking| %>
       <% if booking.planet.planet_img.attached? %>
         <div class="card-trip">
+          <a href="<%= planet_path(booking.planet) %>">
           <%= cl_image_tag booking.planet.planet_img.key %>
         <% end %>
         <div class="card-trip-infos">
           <div>
             <h1><%= booking.planet.name %></h1>
-            <br><p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
-            <p><%= number_night = booking.end_date.jd - booking.start_date.jd %> nights</p>
-            <p>TOTAL $<%= number_night * booking.planet.price_per_night %></p>
-            <br><h2>
-            <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
-            <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>">
-            </span>
-
-            </h2>
+              <br><p><%= booking.start_date.strftime("%b %d, %Y") %> - <%= booking.end_date.strftime("%b %d, %Y") %></p>
+              <p><%= number_night = booking.end_date.jd - booking.start_date.jd %> nights</p>
+              <br><h2>TOTAL $<%= number_night * booking.planet.price_per_night %></h2>
+              <h2>
+              <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
+              <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>">
+              </span>
+              </h2>
             </div>
           </div>
-          </a>
-          <div class="container">
-            <%= link_to "Add a new review", new_booking_review_path(booking), class: "btn btn-flat-dashboard" %>
-            <%= link_to "Remove", booking_path(booking),
+
+          <div class="container text-center mb-3">
+            <%= link_to "Add review", new_booking_review_path(booking), class: "btn btn-flat-dashboard mt-4 mb-2" %>
+            <%= link_to "Delete", booking_path(booking),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-flat-dashboard"
+                class: "btn btn-flat-dashboard mt-4 mb-2"
             %>
-              </div>
+          </div>
+          </a>
         </div>
     <% end %>
   </div>
 
 
-  <div class="header-container text-center my-5">
+  <div class="header-container text-center mt-5">
     <h1>My <span>Reviews</span></h1>
   </div>
 
   <div class="container">
-  <div class="cards">
-    <% @reviews.each do |review| %>
-        <div class="card-trip">
-        <div class="card-trip-infos">
-          <div>
-            <% review.rating.times do %>
-              <i class="fa fa-star" style="color: #FFD43B;"></i>
-            <% end %>
-            <% (5 - review.rating).times do %>
-              <i class="fa fa-star-o" style="color: #000000;"></i>
-            <% end %>
-            <br><p><%= review.content %></p>
+    <div class="cards">
+      <% @reviews.each do |review| %>
+          <div class="card-trip">
+            <a href="<%= planet_path(review.booking.planet) %>">
+            <div class="card-trip-infos">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <% review.rating.times do %>
+                      <i class="fa fa-star" style="color: #FFD43B;"></i>
+                    <% end %>
+                    <% (5 - review.rating).times do %>
+                      <i class="fa fa-star-o" style="color: #000000;"></i>
+                    <% end %>
+                        <p class="mt-4"><%= review.content %></p>
+                    </div>
+                    </div>
+                    </div>
             </div>
+            <div class="container text-center mt-3 mb-3">
+            <%= link_to "Delete", booking_review_path(review.booking, review),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "btn btn-flat-dashboard"
+            %>
           </div>
           </a>
-        </div>
-    <% end %>
-  </div>
+          </div>
+      <% end %>
+    </div>
 
 
   <div class="text-center p-3 my-3">
