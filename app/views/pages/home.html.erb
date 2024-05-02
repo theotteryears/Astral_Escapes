@@ -48,7 +48,7 @@
           <div>
             <div>
               <h1><%= planet.name %></h1>
-              <h3><span><%= @average_rating %></span> from <span><%= planet.reviews.count %></span> reviews</h3>
+              <h3><span><%= @average_rating.to_i %></span> from <span><%= planet.reviews.count %></span> reviews</h3>
             </div>
             <p>
               <br>Galaxy - <%= planet.location %>
