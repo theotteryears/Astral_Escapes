@@ -17,7 +17,7 @@
               <h1><%= booking.planet.name %></h1>
               <h2></h2>
             </div>
-            <p><%= booking.start_date %> to <%= booking.end_date %></p>
+            <p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
             </div>
             <h2 class="card-trip-pricing"><span><%= booking.status %></span></h2>
           </div>
