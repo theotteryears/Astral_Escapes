@@ -1,7 +1,7 @@
 .btn-flat-dashboard {
   position: relative;
   color: rgb(39,39,39);
-  border: 2px solid rgba(35,139,236,1);
+  border: 2px solid $AE-black;
   background: rgb(255, 255, 255);
   transition: background 0.3s ease;
   font-family: "Unica One", "Helvetica", "sans-serif";
@@ -11,7 +11,7 @@
   &:hover {
     opacity: 0.8;
     color: rgb(39,39,39);
-    border: 2px solid rgba(35,139,236,1);
+    border: 2px solid $AE-black;
   }
   &:active {
     top: 2px;
@@ -19,7 +19,7 @@
     box-shadow: none;
     opacity: 0.8;
     color: rgb(39,39,39);
-    border: 2px solid rgba(35,139,236,1);
+    border: 2px solid $AE-black;
   }
 }
 
@@ -27,7 +27,7 @@
 .btn-flat-dashboard-remove {
   position: relative;
   color: rgb(39,39,39);
-  border: 2px solid $AE-red;
+  border: 2px solid $AE-black;
   background: rgb(255, 255, 255);
   transition: background 0.3s ease;
   font-family: "Unica One", "Helvetica", "sans-serif";
@@ -37,7 +37,7 @@
   &:hover {
     opacity: 0.8;
     color: rgb(39,39,39);
-    border: 2px solid $AE-red;
+    border: 2px solid $AE-black;
   }
   &:active {
     top: 2px;
@@ -45,6 +45,6 @@
     box-shadow: none;
     opacity: 0.8;
     color: rgb(39,39,39);
-    border: 2px solid $AE-red;
+    border: 2px solid $AE-black;
   }
 }
