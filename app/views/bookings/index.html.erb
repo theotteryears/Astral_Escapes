@@ -43,7 +43,7 @@
   </div>
 
   <div class="container">
-    <div class="cards">
+    <div class="cards mt-3">
       <% @reviews.each do |review| %>
           <div class="card-trip">
             <a href="<%= planet_path(review.booking.planet) %>">
