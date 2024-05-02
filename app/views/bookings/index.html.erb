@@ -24,12 +24,12 @@
             </div>
           </div>
           </a>
-          <div class="container d-flex justify-content-between">
-        <%= link_to "Add a new review", new_booking_review_path(booking), class: "btn btn-flat" %>
-        <%= link_to "Remove", booking_path(booking),
+          <div class="container">
+            <%= link_to "Add a new review", new_booking_review_path(booking), class: "btn btn-flat-dashboard" %>
+            <%= link_to "Remove", booking_path(booking),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-flat"
-              %>
+                class: "btn btn-flat-dashboard"
+            %>
               </div>
         </div>
     <% end %>
