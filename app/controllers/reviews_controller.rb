@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
 before_action :set_booking, only: %i[new create]
 
-  def new
+  def index
+    @reviews = Review.all
+  end
 
+  def new
     @review = Review.new
   end
 
@@ -10,7 +13,7 @@ before_action :set_booking, only: %i[new create]
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to planet_path(@booking.planet)
+      redirect_to planet_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +26,6 @@ before_action :set_booking, only: %i[new create]
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :booking_id)
   end
 end
