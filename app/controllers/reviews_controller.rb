@@ -2,15 +2,16 @@ class ReviewsController < ApplicationController
 before_action :set_planet, only: %i[new create]
 
   def new
-    @planet = Planet.find(params[:planet_id])
+    @booking = @planet.bookings.find(params[:booking_id])
     @review = Review.new
   end
 
   def create
-    @review = Review.new(review_params)
+    @booking = @planet.bookings.find(params[:booking_id])
+    @review = @booking.reviews.build(review_params)
     review.planet = @planet
     if review.save
-    redirect_to planet_path(@planet)
+      redirect_to [@planet, @booking]
     else
       render :new, status: :unprocessable_entity
     end
