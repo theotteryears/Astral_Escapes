@@ -4,7 +4,7 @@ require "open-uri"
 puts "Cleaning database..."
 Planet.destroy_all
 User.destroy_all
-Booking.destory_all
+Booking.destroy_all
 Review.destroy_all
 
 puts "Cleaned the DB!"
