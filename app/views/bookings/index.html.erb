@@ -38,7 +38,6 @@
     <% end %>
   </div>
 
-
   <div class="header-container text-center mt-5">
     <h1>My <span>Reviews</span></h1>
   </div>
@@ -60,23 +59,17 @@
                     <% end %>
                         <p class="mt-3"><%= review.content %></p>
                     </div>
-                    </div>
-                    </div>
+                  </div>
+                </div>
             </div>
-            <div class="container text-center mt-3 mb-3">
-            <%= link_to "Delete", booking_review_path(review.booking, review),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn btn-flat-dashboard"
-            %>
           </div>
           </a>
-          </div>
+        </div>
       <% end %>
     </div>
 
-
-  <div class="text-center p-3 my-3">
-    <%= link_to "Back", planets_path, class: "btn btn-flat" %>
+    <div class="text-center p-3 my-3">
+      <%= link_to "Back", planets_path, class: "btn btn-flat" %>
+    </div>
   </div>
-</div>
 </div>
