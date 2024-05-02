@@ -239,6 +239,8 @@ Review.create!(content: "The trip was utterly disappointing. The planet I booked
 
 Review.create!(content: "It exceeded all expectations! While the planet Navnan Ghar may have been unconventional, the culinary experience was out of this world. The local delicacies, including delicious alien bug dishes, were surprisingly delightful and truly a highlight of the trip. Despite initial hesitation, I found myself indulging in flavors I never thought possible. The accommodations were comfortable, and the staff went above and beyond to ensure a memorable stay. A truly stellar experience that I would highly recommend to any adventurous foodie!", rating: 5, booking_id: 4)
 
+Review.create!(content: "Such an amazing time! So glad i travelled 46 AU to get here!", rating: 5, booking_id: 1)
+
 
 puts "Finished creating 6 reviews"
 
