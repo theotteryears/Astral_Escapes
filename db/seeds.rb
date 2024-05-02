@@ -17,7 +17,8 @@ puts "Finished creating admin user"
 puts "---------------------------------"
 
 puts "Creating 38 planets..."
-review = Review.new(content:"very good", rating: 5)
+review = Review.new(content:"very good", rating: 5, bookings_id: Booking.last)
+review.save
 planet = Planet.new(name: "Abbassia", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481596/1_kwwe6m.jpg")
 planet.planet_img.attach(io: file, filename: "1.jpg", content_type: "image/jpg")
