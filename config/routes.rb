@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   devise_for :users
 
   root to: "pages#home"
 
   resources :planets do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[new create]
   end
   resources :bookings, only: [:index]
 
