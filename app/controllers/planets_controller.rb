@@ -6,7 +6,8 @@ class PlanetsController < ApplicationController
   def index
     @planets = Planet.all
     if params[:query].present?
-      @planets = Planet.where("name ILIKE ?", params[:query])
+      sql_subquery = "name ILIKE :query OR distance ILIKE :query OR location ILIKE :query OR details ILIKE :query"
+      @planets = Planet.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
