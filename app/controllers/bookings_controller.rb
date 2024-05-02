@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @reviews = Review.all
   end
 
   def new
@@ -10,7 +11,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @planet = Planet.find(params[:planet_id])
     @booking = Booking.new(booking_params)
     @booking.planet = @planet
@@ -26,10 +26,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path, status: :see_other
-  end
-
-  def dashboard
-
   end
 
   private
