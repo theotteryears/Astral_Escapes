@@ -4,8 +4,10 @@ require "open-uri"
 puts "Cleaning database..."
 Planet.destroy_all
 User.destroy_all
+Booking.destory_all
+Review.destroy_all
 
-puts "Clean!"
+puts "Cleaned the DB!"
 
 puts "Creating 1 admin user..."
 
