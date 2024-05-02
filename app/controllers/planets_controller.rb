@@ -14,7 +14,8 @@ class PlanetsController < ApplicationController
   def show
     @booking = Booking.new
     @rating = Review.new
-    @reviews = Review.all
+    @reviews = Review.where(params[:planet_id])
+    @average_rating = @reviews.average(:rating)
   end
 
   def new
@@ -29,7 +30,6 @@ class PlanetsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   private
