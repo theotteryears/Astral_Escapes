@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-before_action :set_booking, only: %i[new create]
+before_action :set_booking, only: %i[new create destroy]
 
   def index
     @reviews = Review.all
@@ -13,10 +13,16 @@ before_action :set_booking, only: %i[new create]
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to planet_path(@booking)
+      redirect_to planet_path(@review.booking.planet)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   private
