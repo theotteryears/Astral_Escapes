@@ -10,7 +10,7 @@ before_action :set_booking, only: %i[new create]
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to planet_path
+      redirect_to planet_path(@booking.planet)
     else
       render :new, status: :unprocessable_entity
     end
