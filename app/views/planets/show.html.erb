@@ -29,7 +29,10 @@
                   <div class="card-trip">
                   <div class="card-trip-infos">
                     <div>
-                      <br><p><%= review.content %></p>
+                      <% review.rating.times do %>
+                        <i class="fa fa-star" style="color: #FFD43B;"></i>
+                      <% end %>
+                        <br><p><strong><%= review.content %></strong></p>
                       </div>
                     </div>
                     </a>
