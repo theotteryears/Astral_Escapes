@@ -18,17 +18,6 @@ puts "Finished creating 1 admin user"
 puts "---------------------------------"
 
 
-puts "Creating 3 bookings..."
-
-Booking.create!(visitor_id: 1, planet_id: 38, start_date: "2544-05-09", end_date: "2544-05-31", status: "Unconfirmed")
-Booking.create!(visitor_id: 1, planet_id: 31, start_date: "2544-06-22", end_date: "2544-07-22", status: "Unconfirmed")
-Booking.create!(visitor_id: 1, planet_id: 7, start_date: "2544-12-01", end_date: "2544-12-31", status: "Confirmed")
-
-puts "Finished creating 3 bookings"
-
-puts "---------------------------------"
-
-
 puts "Creating 38 planets..."
 
 planet = Planet.new(name: "Abbassia", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
@@ -222,6 +211,16 @@ planet.planet_img.attach(io: file, filename: "38.jpg", content_type: "image/jpg"
 planet.save
 
 puts "Finished creating 38 planets"
+
+puts "---------------------------------"
+
+puts "Creating 3 bookings..."
+
+Booking.create!(visitor_id: 1, planet_id: 38, start_date: "2544-05-09", end_date: "2544-05-31", status: "Unconfirmed")
+Booking.create!(visitor_id: 1, planet_id: 31, start_date: "2544-06-22", end_date: "2544-07-22", status: "Unconfirmed")
+Booking.create!(visitor_id: 1, planet_id: 7, start_date: "2544-12-01", end_date: "2544-12-31", status: "Confirmed")
+
+puts "Finished creating 3 bookings"
 
 puts "---------------------------------"
 
