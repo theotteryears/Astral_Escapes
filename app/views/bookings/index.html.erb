@@ -46,6 +46,12 @@
         <div class="card-trip">
         <div class="card-trip-infos">
           <div>
+            <% review.rating.times do %>
+              <i class="fa fa-star" style="color: #FFD43B;"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="fa fa-star-o" style="color: #000000;"></i>
+            <% end %>
             <br><p><%= review.content %></p>
             </div>
           </div>
