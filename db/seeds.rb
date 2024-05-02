@@ -11,10 +11,21 @@ puts "Creating 1 admin user..."
 
 User.create!(email: "admin@astralescapes.com", password: "123456", first_name: "Admin", last_name: "Admin")
 
-
-puts "Finished creating admin user"
+puts "Finished creating 1 admin user"
 
 puts "---------------------------------"
+
+
+puts "Creating 3 bookings..."
+
+Booking.create!(visitor_id: 1, planet_id: 38, start_date: "2544-05-09", end_date: "2544-05-31", status: "Unconfirmed")
+Booking.create!(visitor_id: 1, planet_id: 31, start_date: "2544-06-22", end_date: "2544-07-22", status: "Unconfirmed")
+Booking.create!(visitor_id: 1, planet_id: 7, start_date: "2544-12-01", end_date: "2544-12-31", status: "Confirmed")
+
+puts "Finished creating 3 bookings"
+
+puts "---------------------------------"
+
 
 puts "Creating 38 planets..."
 
@@ -208,8 +219,8 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481620/3
 planet.planet_img.attach(io: file, filename: "38.jpg", content_type: "image/jpg")
 planet.save
 
-puts "Finished creating planets"
+puts "Finished creating 38 planets"
 
 puts "---------------------------------"
 
-puts "All finished!"
+puts "Finished seeding the DB!"

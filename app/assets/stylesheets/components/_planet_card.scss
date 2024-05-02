@@ -59,3 +59,17 @@
   align-items: flex-end;
   position: relative;
 }
+
+.confirmed {
+  color: $AE-blue;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.unconfirmed {
+  color: $AE-red;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
