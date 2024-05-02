@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :planets do
-    resources :bookings, only: %i[new create] do
-      resources :reviews, only: %i[new create]
-    end
+    resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: %i[index show] do
+    resources :reviews, only: %i[new create]
+  end
 
   get "dashboard", to: "bookings#dashboard"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
