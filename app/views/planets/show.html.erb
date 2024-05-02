@@ -1,4 +1,4 @@
-<div class="container mt-3 mb-4">
+<div class="container mb-4">
   <div class="card-trip-show">
     <%= image_tag @planet.planet_img %>
       <div class="row">
@@ -21,31 +21,26 @@
       </div>
       <div class="row">
         <hr>
-        <div class="container">
-          <div class="container">
-          <div class="container">
-            <div class="cards">
-              <% @planet.reviews.each do |review| %>
-                  <div class="card-trip">
-                  <div class="card-trip-infos">
-                    <div>
+        <div class="container w-75">
+          <h1 class="text-center my-3">Planet <span>Reviews</span></h1>
+          <div class="cards mb-2">
+            <% @planet.reviews.each do |review| %>
+              <div class="card-trip">
+                <div class="card-trip-infos">
+                  <div>
                       <% review.rating.times do %>
-                        <i class="fa fa-star" style="color: #FFD43B;"></i>
+                      <i class="fa fa-star" style="color: #FFD43B;"></i>
                       <% end %>
-                        <br><p><strong><%= review.content %></strong></p>
-                      </div>
+                      <br><p><strong><%= review.content %></strong></p>
                     </div>
-                    </a>
                   </div>
-              <% end %>
-            </div>
-
-      </div>
+              </div>
+            <% end %>
+          </div>
     </div>
-  </div>
-    <div class="d-flex justify-content-center mb-4">
-      <%=link_to "Back", planets_path, class: "btn btn-flat" %>
-
+      <div class="d-flex justify-content-center mb-3">
+        <%=link_to "Back", planets_path, class: "btn btn-flat my-2" %>
+      </div>
     </div>
   </div>
 </div>
