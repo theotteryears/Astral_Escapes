@@ -13,6 +13,7 @@ class PlanetsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @rating = Review.new
   end
 
   def new

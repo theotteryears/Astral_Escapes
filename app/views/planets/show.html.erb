@@ -19,6 +19,26 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <hr>
+        <div class="container">
+          <% @booking.reviews.each do |review| %>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="fa-thin fa-star" style="color: #000000;"></i>
+            <% end %>
+
+            <h3>Guest Favorite</h3>
+            <hr>
+            <div class="col-6">
+              <%= review.content %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
     <div class="d-flex justify-content-center mb-4">
