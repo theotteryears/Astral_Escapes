@@ -15,6 +15,8 @@
           <div>
             <h1><%= booking.planet.name %></h1>
             <br><p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
+            <p><%= number_night = booking.end_date.jd - booking.start_date.jd %> nights</p>
+            <p>TOTAL $<%= number_night * booking.planet.price_per_night %></p>
             <br><h2>
             <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
             <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>">
@@ -56,6 +58,6 @@
 
 
   <div class="text-center p-3 my-3">
-    <%= link_to "Back", root_path, class: "btn btn-flat" %>
+    <%= link_to "Back", planets_path, class: "btn btn-flat" %>
   </div>
 </div>
