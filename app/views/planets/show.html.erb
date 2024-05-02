@@ -10,7 +10,7 @@
             <% @average_rating.to_i.times do %>
               <i class="fa fa-star" style="color: #FFD43B;"></i>
             <% end %>
-            <p>Rated: <span><%= @average_rating %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
+            <p>Rated: <span><%= @average_rating.to_i %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
           <h2 class="card-trip-pricing-show">
             <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>
@@ -30,6 +30,7 @@
           <div class="cards mb-2">
             <% @planet.reviews.each do |review| %>
               <div class="card-trip">
+                <a href="<%= bookings_path(review.booking) %>">
                 <div class="card-trip-infos">
                   <div>
                     <% review.rating.times do %>
@@ -40,6 +41,7 @@
                   </div>
               </div>
             <% end %>
+            </a>
           </div>
     </div>
       <div class="d-flex justify-content-center mb-3">
