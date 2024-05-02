@@ -17,6 +17,12 @@
             <br><p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
             <br><h2>
             <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
+            <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= link_to "Remove", booking_path(booking),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+              %>
+            </span>
+
             </h2>
             </div>
           </div>
