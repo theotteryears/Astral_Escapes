@@ -13,13 +13,12 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <div class="">
-              <h1><%= booking.planet.name %></h1>
-              <h2></h2>
+            <h1><%= booking.planet.name %></h1>
+            <br><p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
+            <br><h2>
+            <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
+            </h2>
             </div>
-            <p><%= booking.start_date.strftime("%b %d, %Y") %> to <%= booking.end_date.strftime("%b %d, %Y") %></p>
-            </div>
-            <h2 class="card-trip-pricing"><span><%= booking.status %></span></h2>
           </div>
           </a>
         </div>
