@@ -7,10 +7,10 @@
           <h1><%=@planet.name%></h1>
           <p>Star cluster: <%= @planet.details %></p>
           <p>Galaxy: <%=@planet.location%></p>
-          <% @average_rating.to_i.times do %>
-            <i class="fa fa-star" style="color: #FFD43B;"></i>
-          <% end %>
-          <p>Rated: <span><%= @average_rating %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
+            <% @average_rating.to_i.times do %>
+              <i class="fa fa-star" style="color: #FFD43B;"></i>
+            <% end %>
+            <p>Rated: <span><%= @average_rating %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
           <h2 class="card-trip-pricing-show">
             <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>

@@ -170,7 +170,7 @@ file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481615/3
 planet.planet_img.attach(io: file, filename: "30.jpg", content_type: "image/jpg")
 planet.save
 
-planet = Planet.new(name: "Thanjavur Colony", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
+planet = Planet.new(name: "Thanjavur", details: Faker::Space.star_cluster, location: Faker::Space.galaxy, price_per_night: Faker::Number.within(range: 1000..10000), distance: Faker::Space.distance_measurement, user: User.first)
 file = URI.open("https://res.cloudinary.com/dyfh0tbvl/image/upload/v1714481616/31_gyw0f4.jpg")
 planet.planet_img.attach(io: file, filename: "31.jpg", content_type: "image/jpg")
 planet.save

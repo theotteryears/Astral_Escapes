@@ -4,6 +4,8 @@ class PlanetsController < ApplicationController
 
 
   def index
+    @reviews = Review.where(params[:planet_id])
+    @average_rating = @reviews.average(:rating)
     @planets = Planet.all
     if params[:query].present?
       sql_subquery = "name ILIKE :query OR distance ILIKE :query OR location ILIKE :query OR details ILIKE :query"

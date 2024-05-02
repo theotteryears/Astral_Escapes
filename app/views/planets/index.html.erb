@@ -24,12 +24,11 @@
         <% end %>
         <div class="card-trip-infos">
           <div>
-            <div class="">
+            <div>
               <h1><%= planet.name %></h1>
-              <h2></h2>
+              <p><span><%= @average_rating %></span> from <span><%= planet.reviews.count %></span> reviews</p>
             </div>
             <p>
-              Star Cluster - <%= planet.details%>
               <br>Galaxy - <%= planet.location %>
               <br><%= planet.distance %> away
             </p>
