@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-before_action :set_booking, only: %i[new create destroy]
+before_action :set_booking, only: %i[new create]
 
   def index
     @reviews = Review.all
@@ -22,7 +22,7 @@ before_action :set_booking, only: %i[new create destroy]
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to booking_path(@review.booking), status: :see_other
   end
 
   private
