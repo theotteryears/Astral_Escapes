@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[index show destroy] do
-    resources :reviews, only: %i[new create edit update]
+    resources :reviews, only: %i[new create]
   end
 
-  resources :reviews, only: :destroy
+  resources :reviews, only: %i[destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
