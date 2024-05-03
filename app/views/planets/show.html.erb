@@ -10,7 +10,12 @@
             <% @average_rating.to_i.times do %>
               <i class="fa fa-star" style="color: #FFD43B;"></i>
             <% end %>
-            <p>Rated: <span><%= @average_rating.to_i %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
+            <% unless @average_rating.nil? %>
+            <% rating = @average_rating %>
+            <p>Rated: <span><%= rating.round(1) %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
+            <% else %>
+              <p>Not yet rated</p>
+            <% end %>
           <h2 class="card-trip-pricing-show">
             <br><span>$<%=@planet.price_per_night%></span> per night</h2>
           </div>

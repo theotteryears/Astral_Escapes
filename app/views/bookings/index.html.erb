@@ -59,6 +59,9 @@
                       <i class="fa fa-star-o" style="color: #000000;"></i>
                     <% end %>
                     <p class="mt-3"><%= review.content %></p>
+                    <div class="button-container-review">
+                      <%= link_to 'Delete', review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-flat-dashboard mt-3 mb-2" %>
+                    </div>
                   </div>
                 </div>
               </div>
