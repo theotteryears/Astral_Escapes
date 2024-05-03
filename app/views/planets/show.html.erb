@@ -7,9 +7,20 @@
           <h1><%=@planet.name%></h1>
           <p>Star cluster: <%= @planet.details %></p>
           <p>Galaxy: <%=@planet.location%></p>
-            <% @average_rating.to_i.times do %>
-              <i class="fa fa-star" style="color: #FFD43B;"></i>
+          <%if @average_rating != nil %>
+            <% average_rating_floor = @average_rating.to_i %>
+            <% average_rating_decimal = @average_rating - average_rating_floor %>
+
+            <% 5.times do |index| %>
+              <% if index < average_rating_floor %>
+                <i class="fas fa-star" style="color: #FFD43B;"></i>
+              <% elsif index == average_rating_floor && average_rating_decimal > 0 %>
+                <i class="fas fa-star-half" style="color: #FFD43B;"></i>
+              <% else %>
+                <i class="far fa-star" style="color: white;"></i>
+              <% end %>
             <% end %>
+          <% end %>
             <% unless @average_rating.nil? %>
             <% rating = @average_rating %>
             <p>Rated: <span><%= rating.round(1) %></span> from <span><%= @planet.reviews.count %></span> reviews</p>
@@ -38,14 +49,16 @@
                 <a href="<%= bookings_path(review.booking) %>">
                   <div class="card-trip-infos">
                     <div>
+                      <% average_rating_floor = review.rating.to_i %>
+                      <% average_rating_decimal = review.rating - average_rating_floor %>
                       <% count = 0 %>
                       <% 5.times do %>
-                        <% if review.rating > count %>
+                        <% if count < average_rating_floor  %>
                           <i class="fa fa-star" style="color: #FFD43B;"></i>
-                        <% elsif review.rating < count %>
-                          <i class="fa-regular fa-star" style="color: white;"></i>
-                        <% else %>
+                        <% elsif count == average_rating_floor && average_rating_decimal > 0 %>
                           <i class="fas fa-star-half" style="color: #FFD43B;"></i>
+                        <% else %>
+                          <i class="fa-regular fa-star" style="color: white;"></i>
                         <% end %>
                         <% count += 1%>
                       <% end %>
