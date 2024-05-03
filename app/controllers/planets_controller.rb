@@ -4,8 +4,6 @@ class PlanetsController < ApplicationController
 
 
   def index
-    @reviews = Review.where(params[:planet_id])
-    @average_rating = @reviews.average(:rating)
     planets = Planet.all
     @planets = planets.order('name ASC')
     if params[:query].present?
@@ -17,7 +15,7 @@ class PlanetsController < ApplicationController
   def show
     @booking = Booking.new
     @rating = Review.new
-    @reviews = Review.where(params[:planet_id])
+    @reviews = @planet.reviews
     @average_rating = @reviews.average(:rating)
   end
 

@@ -26,7 +26,11 @@
           <div>
             <div>
               <h1><%= planet.name %></h1>
-              <h3><span><%= @average_rating.to_i %></span> from <span><%= planet.reviews.count %></span> reviews</h3>
+              <% if planet.reviews.any? %>
+              <h3><span><%= planet.reviews.average(:rating).to_i %></span> from <span><%= planet.reviews.count %></span> reviews</h3>
+              <% else %>
+              <h3>No rating yet</h3>
+              <% end %>
             </div>
             <p>
               <br>Galaxy - <%= planet.location %>
