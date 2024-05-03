@@ -6,6 +6,8 @@ import flatpickr from "flatpickr";
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   connect() {
-    flatpickr(this.element)
+    flatpickr(this.element, {
+      minDate: "2535-01-01"
+    });
   }
 }
