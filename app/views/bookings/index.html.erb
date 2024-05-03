@@ -19,9 +19,7 @@
               <p><%= number_night = booking.end_date.jd - booking.start_date.jd %> nights</p>
               <br><h2>TOTAL $<%= number_night * booking.planet.price_per_night %></h2>
               <h2>
-              <span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>"><%= booking.status %></span>
-              <br><span class="<%= booking.status == 'Confirmed' ? 'confirmed' : 'unconfirmed' %>">
-              </span>
+              <span class="<%= booking.status == 'Unconfirmed' ? 'unconfirmed' : 'confirmed' %>"><%= booking.status %></span>
               </h2>
             </div>
           </div>
