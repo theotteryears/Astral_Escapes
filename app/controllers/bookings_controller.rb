@@ -1,8 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(visitor: current_user)
     @reviews = Review.all
+    @planets = Planet.all
+    @my_planet_bookings = Booking.where(planet: current_user.planets)
+    @planet = Planet.new
   end
 
   def new
@@ -16,10 +19,22 @@ class BookingsController < ApplicationController
     @booking.planet = @planet
     @booking.visitor = current_user
     if @booking.save
-        redirect_to bookings_path
-      else
-        render 'planets/show', status: :unprocessable_entity
-      end
+      redirect_to bookings_path
+    else
+      render 'planets/show', status: :unprocessable_entity
+    end
+  end
+
+  def confirm
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "Confirmed")
+    redirect_to bookings_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "Unconfirmed")
+    redirect_to bookings_path
   end
 
   def destroy

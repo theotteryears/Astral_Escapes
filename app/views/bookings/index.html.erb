@@ -37,6 +37,39 @@
   </div>
 
   <div class="header-container text-center mt-4">
+    <h1>My <span>Planets</span></h1>
+  </div>
+
+<div class="container">
+  <div class="cards">
+    <% @my_planet_bookings.each do |booking| %>
+      <% if booking.planet.planet_img.attached? %>
+        <div class="card-trip">
+          <a href="<%= planet_path(booking.planet) %>">
+          <%= cl_image_tag booking.planet.planet_img.key %>
+        <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h1><%= booking.planet.name %></h1>
+              <br><p><%= booking.start_date.strftime("%b %d, %Y") %> - <%= booking.end_date.strftime("%b %d, %Y") %></p>
+              <p><%= number_night = booking.end_date.jd - booking.start_date.jd %> nights</p>
+              <br><h2>TOTAL $<%= number_night * booking.planet.price_per_night %></h2>
+              <h2>
+              </span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="container text-center mb-3">
+              <%= link_to "Confirm", confirm_booking_path(booking), class: "btn btn-flat-dashboard mt-3 mb-2", data: {turbo_method: :patch}%>
+              <%= link_to "Decline", decline_booking_path(booking), class: "btn btn-flat-dashboard mt-3 mb-2", data: {turbo_method: :patch}%>
+          </div>
+          </a>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="header-container text-center mt-4">
     <h1>My <span>Reviews</span></h1>
   </div>
 

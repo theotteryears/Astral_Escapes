@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index show destroy] do
     resources :reviews, only: %i[new create]
+
+    member do
+      patch :confirm
+      patch :decline
+    end
+
   end
 
   resources :reviews, only: %i[destroy]
