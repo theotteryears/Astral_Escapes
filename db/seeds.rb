@@ -229,7 +229,7 @@ puts "Creating 6 reviews..."
 
 Review.create!(content: "Nothing short of extraordinary! From the moment I arrived on the shimmering surface of Castila, I was captivated by its otherworldly beauty. The accommodations were beyond compare, and the sense of wonder I experienced exploring the alien landscapes will stay with me forever. A truly unforgettable cosmic getaway!", rating: 5, booking_id: 1)
 
-Review.create!(content: "Astral Escapes offered a thrilling adventure, but an unexpected giant lizard encounter dampened the experience slightly.", rating: 4, booking_id: 1)
+Review.create!(content: "Astral Escapes offered a thrilling adventure, but an unexpected encounter with a giant lizard-like creature dampened the experience slightly.", rating: 4, booking_id: 1)
 
 Review.create!(content: "My holliday was mostly enjoyable, with just a few bumps along the way. The planet offered stunning vistas and fascinating experiences, but the frequent bouts of acid rain put a damper on the outdoor activities. Despite this inconvenience, the accommodations were comfortable, and the staff was attentive to our needs. With a bit of caution and some creative indoor activities, we managed to make the most of our time on this unique planet. Overall, a memorable adventure marred only slightly by the unpredictable weather.", rating: 4, booking_id: 2)
 
