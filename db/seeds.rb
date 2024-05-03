@@ -214,18 +214,19 @@ puts "Finished creating 38 planets"
 
 puts "---------------------------------"
 
-puts "Creating 4 bookings..."
+puts "Creating 5 bookings..."
 
 Booking.create!(visitor_id: 1, planet_id: 4, start_date: Date.new(2544,05,10), end_date: Date.new(2544,05,31), status: "Unconfirmed")
 Booking.create!(visitor_id: 1, planet_id: 20, start_date: Date.new(2544,06,22), end_date: Date.new(2544,07,22), status: "Unconfirmed")
 Booking.create!(visitor_id: 1, planet_id: 14, start_date: Date.new(2544,10,01), end_date: Date.new(2544,10,10), status: "Confirmed")
 Booking.create!(visitor_id: 1, planet_id: 5, start_date: Date.new(2545,01,03), end_date: Date.new(2545,02,04), status: "Confirmed")
+Booking.create!(visitor_id: 1, planet_id: 1, start_date: Date.new(2545,01,05), end_date: Date.new(2545,02,06), status: "Completed")
 
-puts "Finished creating 4 bookings"
+puts "Finished creating 5 bookings"
 
 puts "---------------------------------"
 
-puts "Creating 6 reviews..."
+puts "Creating 7 reviews..."
 
 Review.create!(content: "Nothing short of extraordinary! From the moment I arrived on the shimmering surface of Castila, I was captivated by its otherworldly beauty. The accommodations were beyond compare, and the sense of wonder I experienced exploring the alien landscapes will stay with me forever. A truly unforgettable cosmic getaway!", rating: 5, booking_id: 1)
 
@@ -242,7 +243,7 @@ Review.create!(content: "It exceeded all expectations! While the planet Navnan G
 Review.create!(content: "Such an amazing time! So glad i travelled 46 AU to get here!", rating: 5, booking_id: 1)
 
 
-puts "Finished creating 6 reviews"
+puts "Finished creating 7 reviews"
 
 puts "---------------------------------"
 
